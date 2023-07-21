@@ -22,7 +22,7 @@ Most operating systems can be grouped into two families: Windows and Unix-like s
     
 2.  Unix-like Family: The Unix-like family encompasses operating systems that are inspired by the original Unix operating system, developed at Bell Labs in the 1970s. This family includes various flavors of Unix, as well as the Linux operating system. Unix-like operating systems share similar design principles, including a command-line interface and a hierarchical file system. Examples of Unix-like operating systems include Linux distributions (such as Ubuntu, Fedora, and Debian), macOS (which is based on BSD, a Unix-like system), and FreeBSD.
 
-[![[Pasted image 20230624031138.png]]](https://en.wikipedia.org/wiki/Unix-like#/media/File:Unix_history-simple.svg)
+[<img src="/assets/20230624031138.png"/>](https://en.wikipedia.org/wiki/Unix-like#/media/File:Unix_history-simple.svg)
 
 ---
 "date" is a command used in Linux and Unix-like systems to display the current date and time.
