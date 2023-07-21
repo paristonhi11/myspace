@@ -5,9 +5,7 @@ id: home
 permalink: /
 ---
 
-# Welcome!
-
-# It's Telar Karan
+# Welcome! It's Telar Karan
 
 ## Senior Analyst | Full-Stack Developer
 
