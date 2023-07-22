@@ -5,14 +5,8 @@ id: home
 permalink: /
 ---
 
-<ul>
- 
-  {% for folder in root_folders %}
-    <li>
-      <strong>{{ folder.title }}</strong>
-    </li>
-  {% endfor %}
-</ul>
+
+
 
 # Welcome! It's Telar Karan
 
@@ -24,6 +18,19 @@ Welcome to my personal Space! I am Telar Karan, a Senior Analyst at Capgemini wi
 
 - Email: telarkaran@outlook.com
 
+<ul>
+ {% for folder in root_folders %}
+    <li>
+      <strong>{{ folder.title }}</strong>
+    </li>
+  {% endfor %}
+  {% assign recent_notes = site.notes  %}
+  {% for note in recent_notes %}
+    <li>
+      <a class="internal-link" href="{{ note.url }}">{{ note.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
 ### Education
 
 - Bachelor of Technology (B.Tech) in Electrical Engineering
