@@ -6,7 +6,7 @@ permalink: /
 ---
 
 <ul>
-  {% assign root_folders = site.pages | where_exp: "page", "page.path contains 'notes/' and page.path | split: '/' | size == 2" %}
+ 
   {% for folder in root_folders %}
     <li>
       <strong>{{ folder.title }}</strong>
