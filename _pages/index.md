@@ -5,38 +5,11 @@ id: home
 permalink: /
 ---
 
-{% assign root_folder = site.pages | where_exp: "page", "page.path contains 'notes/' and page.path | split: '/' | size == 2" %}
 <ul>
-  {% for page in root_folder %}
+  {% assign root_folders = site.pages | where_exp: "page", "page.path contains 'notes/' and page.path | split: '/' | size == 2" %}
+  {% for folder in root_folders %}
     <li>
-      <span class="folder-toggle" onclick="toggleFolder(this)">&#9660;</span>
-      <strong>{{ page.title }}</strong>
-      <ul class="folder-content">
-        {% assign folder_path = page.path | append: '/' %}
-        {% for note in site.pages %}
-          {% if note.path contains folder_path %}
-            {% capture relative_path %}{{ note.path | remove: folder_path }}{% endcapture %}
-            {% if relative_path contains '/' %}
-              {% assign folder_name = relative_path | split: '/' | first %}
-              <li>
-                <span class="folder-toggle" onclick="toggleFolder(this)">&#9660;</span>
-                <strong>{{ folder_name }}</strong>
-                <ul class="folder-content">
-                  {% for sub_note in site.pages %}
-                    {% if sub_note.path contains folder_path %}
-                      {% if sub_note.path contains folder_name %}
-                        <li><a class="internal-link" href="{{ sub_note.url }}">{{ sub_note.title }}</a></li>
-                      {% endif %}
-                    {% endif %}
-                  {% endfor %}
-                </ul>
-              </li>
-            {% else %}
-              <li><a class="internal-link" href="{{ note.url }}">{{ note.title }}</a></li>
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-      </ul>
+      <strong>{{ folder.title }}</strong>
     </li>
   {% endfor %}
 </ul>
