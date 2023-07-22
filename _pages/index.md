@@ -5,6 +5,19 @@ id: home
 permalink: /
 ---
 
+{% assign recent_notes = site.notes | sort: "last_modified_at_timestamp" | reverse %}
+<ul>
+  {% for note in recent_notes %}
+    <li>
+      {% if note.path contains '/folder' %}
+        <strong>Folder: {{ note.relative_path }}</strong>
+      {% endif %}
+      <a class="internal-link" href="{{ note.url }}">{{ note.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+
 # Welcome! It's Telar Karan
 
 ## Senior Analyst | Full-Stack Developer
